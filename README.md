@@ -105,7 +105,7 @@ gamma = 0.1
 ## Evaluation
 To assess the performance of the selected models, they were trained on the entire training set of 55,000 images and evaluated on a separate test set containing 6,075 unseen images. The objective was to obtain a high test accuracy, indicating the model's ability to distinguish between real and fake images.
 
-<img src='./Figure/Model_comparison.png' width='500'>
+<img src='./Figure/Model_comparsion.png' width='500'>
 
 The evaluation results for the three models are as follows:
 
@@ -116,6 +116,13 @@ InceptionV3 accuracy: 0.95
 Based on these results, it can be observed that all three models achieve reasonably high accuracies on the DeepFake detection task. InceptionV3 outperforms the other models with the highest accuracy of 0.95, indicating its superior ability to discriminate between real and fake images. VGG16 also performs well with an accuracy of 0.9, while ResNet18 achieves a slightly lower accuracy of 0.82.
 
 ### Performance of InceptionV3
-<img src='./Figure/Inception_acc.png' width='500'>
 
-<img src='./Figure/Inception_conf.png' width='500'>
+<img src='./Figure/Inception_acc.png' width='800'>
+
+Training and validation accuracy consistently increase during the training process.​ After around 6 epochs, the validation accuracy shows a slow improvement.​ There is a noticeable gap between the validation loss and the training loss.
+
+<img src='./Figure/Inception_conf.png' width='400'>
+
+### Fine-tuning
+
+To be continued...
