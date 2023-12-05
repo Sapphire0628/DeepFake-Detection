@@ -36,6 +36,17 @@ For the DeepFake detection task, three deep neural network models were chosen ba
 
 ### ResNet18
 > ResNet18 is a relatively lightweight deep neural network architecture with 18 layers. It has shown remarkable performance in various computer vision tasks and has become a widely adopted model due to its simplicity and effectiveness.
+```
+class ResNetModel(nn.Module):
+    def __init__(self):
+        super(ResNetModel, self).__init__()
+        self.model = models.resnet18(pretrained=True)
+        self.model.fc = nn.Linear(self.model.fc.in_features, 2)
+        
+    def forward(self, x):
+        return self.model(x)
+```
+<img src='./Figure/ResNet.png' width='100'>
 
 ### VGG16
 > VGG16 is a deeper network architecture consisting of 16 layers. It has achieved state-of-the-art performance on several image classification benchmarks. VGG16 is known for its uniform architecture, with small 3x3 filters throughout the network.
