@@ -30,3 +30,15 @@ val_tranform = transforms.Compose([
 > Normalization: Normalization aids in faster convergence during the model training process and helps avoid issues related to varying pixel value ranges.
 
 > Data Augmentation: To increase the diversity of the training dataset and improve the model's generalization ability, data augmentation techniques were applied. One such technique is horizontal flip, which creates variations by flipping the images horizontally.
+
+## Algorithm Selection
+For the DeepFake detection task, three deep neural network models were chosen based on their popularity and performance in image classification tasks:
+
+### ResNet18
+> ResNet18 is a relatively lightweight deep neural network architecture with 18 layers. It has shown remarkable performance in various computer vision tasks and has become a widely adopted model due to its simplicity and effectiveness.
+
+### VGG16
+> VGG16 is a deeper network architecture consisting of 16 layers. It has achieved state-of-the-art performance on several image classification benchmarks. VGG16 is known for its uniform architecture, with small 3x3 filters throughout the network.
+
+### InceptionV3
+> InceptionV3 is a more complex network architecture that incorporates the concept of inception modules, which allow the network to capture information at multiple scales. It has demonstrated excellent performance on large-scale image classification tasks.
