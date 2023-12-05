@@ -46,10 +46,33 @@ class ResNetModel(nn.Module):
     def forward(self, x):
         return self.model(x)
 ```
-<img src='./Figure/ResNet.png' width='100'>
+<img src='./Figure/ResNet18.png' width='100'>
 
 ### VGG16
 > VGG16 is a deeper network architecture consisting of 16 layers. It has achieved state-of-the-art performance on several image classification benchmarks. VGG16 is known for its uniform architecture, with small 3x3 filters throughout the network.
+```
+class VGGModel(nn.Module):
+    def __init__(self):
+        super(VGGModel, self).__init__()
+        self.model = models.vgg16(pretrained=True)
+        self.model.classifier[-1] = nn.Linear(self.model.classifier[-1].in_features, 2)
+
+    def forward(self, x):
+        return self.model(x)
+```
+<img src='./Figure/VGG16.png' width='100'>
 
 ### InceptionV3
 > InceptionV3 is a more complex network architecture that incorporates the concept of inception modules, which allow the network to capture information at multiple scales. It has demonstrated excellent performance on large-scale image classification tasks.
+```
+class InceptionModel(nn.Module):
+    def __init__(self):
+        super(InceptionModel, self).__init__()
+        self.model = models.inception_v3(pretrained=True)
+        in_features = self.model.fc.in_features
+        self.model.aux_logits = False
+
+    def forward(self, x):
+        return self.model(x)
+```
+<img src='./Figure/InceptionV3.png' width='100'>
