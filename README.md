@@ -31,6 +31,15 @@ val_tranform = transforms.Compose([
 
 > Data Augmentation: To increase the diversity of the training dataset and improve the model's generalization ability, data augmentation techniques were applied. One such technique is horizontal flip, which creates variations by flipping the images horizontally.
 
+### Display original and augmented images
+
+<img src='./Figure/changes.png' width='500'>
+
+### Display Real and Fake images
+
+<img src='./Figure/real.png' width='500'>
+<img src='./Figure/fake.png' width='500'>
+
 ## Algorithm Selection
 For the DeepFake detection task, three deep neural network models were chosen based on their popularity and performance in image classification tasks:
 
@@ -76,3 +85,37 @@ class InceptionModel(nn.Module):
         return self.model(x)
 ```
 <img src='./Figure/InceptionV3.png' width='500'>
+
+## General Settings
+```
+batch_size = 64
+shuffle_dataset = True
+
+# Loss function and optimizer params
+learning_rate = 0.0001
+epsilon = 1e-08 
+weight_decay = 1e-4
+momentum = 0.9
+
+# Learning rate decay function params
+step_size = 5
+gamma = 0.1
+```
+
+## Evaluation
+To assess the performance of the selected models, they were trained on the entire training set of 55,000 images and evaluated on a separate test set containing 6,075 unseen images. The objective was to obtain a high test accuracy, indicating the model's ability to distinguish between real and fake images.
+
+<img src='./Figure/Model_comparison.png' width='500'>
+
+The evaluation results for the three models are as follows:
+
+ResNet18 accuracy: 0.82
+VGG16 accuracy: 0.9
+InceptionV3 accuracy: 0.95
+
+Based on these results, it can be observed that all three models achieve reasonably high accuracies on the DeepFake detection task. InceptionV3 outperforms the other models with the highest accuracy of 0.95, indicating its superior ability to discriminate between real and fake images. VGG16 also performs well with an accuracy of 0.9, while ResNet18 achieves a slightly lower accuracy of 0.82.
+
+### Performance of InceptionV3
+<img src='./Figure/Inception_acc.png' width='500'>
+
+<img src='./Figure/Inception_conf.png' width='500'>
