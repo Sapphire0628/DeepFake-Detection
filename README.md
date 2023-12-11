@@ -1,6 +1,6 @@
 # DeepFake Detection
 
-## Source Code: [here](cs4487-deepfake-detection.ipynb)
+ [Source Code](cs4487-deepfake-detection.ipynb)
 
 ## Introduction
 
