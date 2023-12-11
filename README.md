@@ -1,5 +1,7 @@
 # DeepFake Detection
 
+## Source Code: [here](cs4487-deepfake-detection.ipynb)
+
 ## Introduction
 
 The rapid advancement of deep learning technology has led to a significant increase in the realism of fake content. DeepFake detection has emerged as a crucial area of research to combat the spread of manipulated media. In this report, we present the evaluation of three popular deep neural network models, namely ResNet18, VGG16, and InceptionV3, for the task of DeepFake detection.
